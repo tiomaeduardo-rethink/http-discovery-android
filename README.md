@@ -9,10 +9,15 @@ A chamada é separada em `request` e `response`. Cada parte tem um arquivo `http
 ## Comandos
 
 `yarn start`: começa o script
+
 `yarn emulator`: abre o emulador. Mude o nome do emulador caso necessário (o padrão é "Pixel_4_API_30")
+
 `yarn listen-http`: loga as chamadas HTTP no terminal, sem salvar em arquivos locais.
+
 `yarn clear:logcat`: limpa os cache do logcat.
+
 `yarn clear:data`: remove a pasta `data` que armazena as chamadas HTTP.
+
 `yarn clear`: `executa os 2 comandos acima`
 
 OBS: O parser das http requests funcionam melhor quando o cache está vazio. Então é recomendado usar o `yarn clear:logcat` antes de rodar `yarn start`.
