@@ -1,0 +1,20 @@
+{
+  "name": "http-discovery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "emulator": "emulator -avd Pixel_4_API_30",
+    "listen-http": "adb logcat -s OkHttp -v raw",
+    "start": "node index.js",
+    "clear:logcat": "adb logcat -c",
+    "clear:data": "rm -rf './data'",
+    "clear": "yarn clear:data && yarn clear:logcat"
+  },
+  "type": "module",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "json-keys-sort": "^2.1.0",
+    "prettier": "^2.8.3"
+  }
+}
