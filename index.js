@@ -65,10 +65,9 @@ logcat.stdout.on("data", function (data) {
     // ---- http.txt
     // ---- payload.json
 
-    const folderName = `${new Date().getTime()}-${httpMethod}-${endpoint.replace(
-      "https://",
-      ""
-    )}`;
+    const folderName = `${new Date().getTime()}-${httpMethod}-${endpoint
+      .replace("https://", "")
+      .replace(/\//g, "\\")}`;
 
     const folderDir = path.join("./data", folderName);
 
@@ -88,7 +87,7 @@ logcat.stdout.on("data", function (data) {
     const payloadResponse = response.match(payloadResponseRegex);
 
     if (payloadResponse) {
-      let content = payloadResponse[0].replace("<--", "").replaceAll("\n", "");
+      let content = payloadResponse[0].replace("<--", "").replace(/\n/g, "");
       const filePath = path.join(folderDir, "response", "payload.json");
 
       saveJsonFile(filePath, content);
